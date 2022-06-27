@@ -35,7 +35,7 @@ const options = list.filter(hasAt)
   .map(score)
   .sort((a, b) => a.value - b.value)
 
-console.log(options)
+console.table(options)
 /**
  * In Scrabble, the lowest point letters are most frequent.
  * Choose the option that has the lowest score.
