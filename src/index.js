@@ -2,9 +2,12 @@ const list = require('./list')
 const { greenLetters, yellowLetters, grayLetters } = require('./guesses')
 const scrabble = require('./scrabble')
 
-const hasAt = word => greenLetters.reduce((acc, { letter, position }) => {
-  return acc && word.charAt(position) === letter
-}, true)
+const hasAt = word => {
+  return greenLetters.length === 0
+    || greenLetters.reduce((acc, { letter, position }) => {
+      return acc && word.charAt(position) === letter
+    }, true)
+}
 
 const doesNotHave = word => grayLetters.reduce((acc, letter) => {
   return acc && !word.includes(letter)
